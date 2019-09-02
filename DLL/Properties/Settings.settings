@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DLL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DLL_WS1_GetMenu" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:51879/GetMenu.asmx</Value>
+    </Setting>
+    <Setting Name="DLL_localhost_GetMenu" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/web/GetMenu.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

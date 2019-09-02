@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopMenu">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTopMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopMenuResult" type="tns:ArrayOfMenu" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMenu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Menu" nillable="true" type="tns:Menu" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Menu">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Mid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTopMenu2">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTopMenu2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopMenu2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MySoapHeader" type="tns:MySoapHeader" />
+      <s:complexType name="MySoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfMenu" nillable="true" type="tns:ArrayOfMenu" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopMenu" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMenu2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopMenu2" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMenu2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopMenu2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTime" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValue" />
+  </wsdl:message>
+  <wsdl:message name="GetValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMenuHttpGetIn" />
+  <wsdl:message name="GetTopMenuHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMenu" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMenu2HttpGetIn" />
+  <wsdl:message name="GetTopMenu2HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeHttpGetIn" />
+  <wsdl:message name="GetTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetValueHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMenuHttpPostIn" />
+  <wsdl:message name="GetTopMenuHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMenu" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMenu2HttpPostIn" />
+  <wsdl:message name="GetTopMenu2HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeHttpPostIn" />
+  <wsdl:message name="GetTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetValueHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="GetMenuSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到报表数据</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu">
+      <wsdl:input message="tns:GetTopMenuSoapIn" />
+      <wsdl:output message="tns:GetTopMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu2">
+      <wsdl:input message="tns:GetTopMenu2SoapIn" />
+      <wsdl:output message="tns:GetTopMenu2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">身份验证</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeSoapIn" />
+      <wsdl:output message="tns:GetTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">有参数的方法</wsdl:documentation>
+      <wsdl:input message="tns:GetValueSoapIn" />
+      <wsdl:output message="tns:GetValueSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GetMenuHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到报表数据</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu">
+      <wsdl:input message="tns:GetTopMenuHttpGetIn" />
+      <wsdl:output message="tns:GetTopMenuHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu2">
+      <wsdl:input message="tns:GetTopMenu2HttpGetIn" />
+      <wsdl:output message="tns:GetTopMenu2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">身份验证</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeHttpGetIn" />
+      <wsdl:output message="tns:GetTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">有参数的方法</wsdl:documentation>
+      <wsdl:input message="tns:GetValueHttpGetIn" />
+      <wsdl:output message="tns:GetValueHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GetMenuHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到报表数据</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu">
+      <wsdl:input message="tns:GetTopMenuHttpPostIn" />
+      <wsdl:output message="tns:GetTopMenuHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu2">
+      <wsdl:input message="tns:GetTopMenu2HttpPostIn" />
+      <wsdl:output message="tns:GetTopMenu2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">身份验证</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeHttpPostIn" />
+      <wsdl:output message="tns:GetTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">有参数的方法</wsdl:documentation>
+      <wsdl:input message="tns:GetValueHttpPostIn" />
+      <wsdl:output message="tns:GetValueHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetMenuSoap" type="tns:GetMenuSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu">
+      <soap:operation soapAction="http://tempuri.org/GetTopMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu2">
+      <soap:operation soapAction="http://tempuri.org/GetTopMenu2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <soap:operation soapAction="http://tempuri.org/GetTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTimeMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <soap:operation soapAction="http://tempuri.org/GetValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetMenuSoap12" type="tns:GetMenuSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu">
+      <soap12:operation soapAction="http://tempuri.org/GetTopMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu2">
+      <soap12:operation soapAction="http://tempuri.org/GetTopMenu2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <soap12:operation soapAction="http://tempuri.org/GetTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTimeMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <soap12:operation soapAction="http://tempuri.org/GetValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetMenuHttpGet" type="tns:GetMenuHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu">
+      <http:operation location="/GetTopMenu" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu2">
+      <http:operation location="/GetTopMenu2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <http:operation location="/GetTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <http:operation location="/GetValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetMenuHttpPost" type="tns:GetMenuHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu">
+      <http:operation location="/GetTopMenu" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMenu2">
+      <http:operation location="/GetTopMenu2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <http:operation location="/GetTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <http:operation location="/GetValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetMenu">
+    <wsdl:port name="GetMenuSoap" binding="tns:GetMenuSoap">
+      <soap:address location="http://localhost/web/GetMenu.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetMenuSoap12" binding="tns:GetMenuSoap12">
+      <soap12:address location="http://localhost/web/GetMenu.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetMenuHttpGet" binding="tns:GetMenuHttpGet">
+      <http:address location="http://localhost/web/GetMenu.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetMenuHttpPost" binding="tns:GetMenuHttpPost">
+      <http:address location="http://localhost/web/GetMenu.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

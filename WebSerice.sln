@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSerice", "WebSerice\", "{991DAC9F-E6C9-4A6E-A52B-2F7DE59BF296}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51879"
+		Debug.AspNetCompiler.PhysicalPath = "WebSerice\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51879\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51879"
+		Release.AspNetCompiler.PhysicalPath = "WebSerice\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51879\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51879"
+		SlnRelativePath = "WebSerice\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLL", "DLL\DLL.csproj", "{401D10DF-A14C-42BA-9D2B-E198991BDE55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{689C1F1F-423E-4B1A-8184-65BC28CCA4EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{991DAC9F-E6C9-4A6E-A52B-2F7DE59BF296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{991DAC9F-E6C9-4A6E-A52B-2F7DE59BF296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{991DAC9F-E6C9-4A6E-A52B-2F7DE59BF296}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{991DAC9F-E6C9-4A6E-A52B-2F7DE59BF296}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{401D10DF-A14C-42BA-9D2B-E198991BDE55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401D10DF-A14C-42BA-9D2B-E198991BDE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401D10DF-A14C-42BA-9D2B-E198991BDE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401D10DF-A14C-42BA-9D2B-E198991BDE55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689C1F1F-423E-4B1A-8184-65BC28CCA4EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689C1F1F-423E-4B1A-8184-65BC28CCA4EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689C1F1F-423E-4B1A-8184-65BC28CCA4EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689C1F1F-423E-4B1A-8184-65BC28CCA4EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {162A74CD-D4E6-48C7-AEDF-5D379217EE58}
+	EndGlobalSection
+EndGlobal
